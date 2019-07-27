@@ -270,8 +270,7 @@ def run():
 	config.read(sys.argv[1])
 	port = 53
 	view = dns.namedict.NameDict()
-	logging.basicConfig(level=logging.INFO,
-		format =  '%(asctime)s : %(levelname)s : %(message)s')
+	logfile = None
 
 	for section in config.sections():
 		if section == 'global':
@@ -279,11 +278,16 @@ def run():
 			if p:
 				port = p 
 			logfile = config[section].get('logfile')
-			if logfile:
-				logging.basicConfig(level=logging.INFO,
-					filename = logfile,
-					format =  '%(asctime)s : %(levelname)s : %(message)s')
-		else:
+	if logfile:
+		logging.basicConfig(level=logging.INFO,
+			filename = logfile,
+			format =  '%(asctime)s : %(levelname)s : %(message)s')
+	else:
+		logging.basicConfig(level=logging.INFO,
+			format =  '%(asctime)s : %(levelname)s : %(message)s')
+
+	for section in config.sections():
+		if section != 'global':
 			if section == 'default':
 				viewname = dns.name.from_text('.')
 			else:
