@@ -1,0 +1,6 @@
+$ORIGIN	_esni.eqt.name.
+$TTL	10
+@	SOA	test test 1 1 1 1 1
+	NS	ns1.eqt.name.
+	A	1.1.1.1
+	TXT	"legitimate delagation"

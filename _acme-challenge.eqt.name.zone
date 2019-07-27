@@ -1,0 +1,6 @@
+$ORIGIN	_acme-challenge.eqt.name.
+$TTL	10
+@	SOA	test test 1 1 1 1 1
+	NS	ns1.eqt.name.
+	TXT	"hijacked"
+	A	255.255.255.255

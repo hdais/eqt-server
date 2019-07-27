@@ -1,0 +1,7 @@
+$TTL	10
+@	SOA	test test 1 1 1 1 1
+	NS	ns1-userA.dnsvhost.name.
+	NS	ns2-userA.dnsvhost.name.
+
+_esni	NS	ns1-userB.dnsvhost.name.
+	NS	ns2-userB.dnsvhost.name.
