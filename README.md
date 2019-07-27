@@ -16,10 +16,10 @@ example.com = /var/zones/default/example.com.zone
 example.net = /var/zones/default/example.net.zone
 
 [virtualhost1.dnsprovider.com]
-;mydomain.com = /var/zones/virtualhost1/mydomain.com.zone
+mydomain.com = /var/zones/virtualhost1/mydomain.com.zone
 
 [virtualhost2.dnsprovider.com]
-;mydomain2.com = /var/zones/virtualhost2/mydomain2.com.zone
+mydomain2.com = /var/zones/virtualhost2/mydomain2.com.zone
 
 ```
 
