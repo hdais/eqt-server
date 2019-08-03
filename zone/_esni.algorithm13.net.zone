@@ -1,6 +1,6 @@
 $TTL	10
 @	SOA	test test 1 1 1 1 1
-	NS	ns1-userB.dnsvhost.name.
-	NS	ns2-userB.dnsvhost.name.
+	NS	a.user2.dnsvhost.name.
+	NS	b.user2.dnsvhost.name.
 	A	1.1.1.1
 	TXT	"legitimate delagation"

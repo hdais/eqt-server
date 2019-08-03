@@ -1,6 +1,7 @@
 $ORIGIN	_esni.eqt.name.
 $TTL	10
 @	SOA	test test 1 1 1 1 1
-	NS	ns1.eqt.name.
+	NS	dns1.dnsvhost.name.
+	NS	dns2.dnsvhost.name.
 	A	1.1.1.1
 	TXT	"legitimate delagation"

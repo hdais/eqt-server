@@ -28,7 +28,7 @@ mydomain2.com = /var/zones/virtualhost2/mydomain2.com.zone
 ;;;
 ;;; [global] clause specifies global setting of eqt-server.
 ;;;
-<b>[global]</b>
+[global]
 ;; listening port
 port = 53
 
@@ -41,11 +41,11 @@ port = 53
 ;;;
 ;; [default] clause specifies zones in "default" virtual host.
 
-<b>[default]</b>
+[default]
 ; &lt;zonename&gt; = &lt;path-to-zonefile&gt;
-<b>example.com = /var/zones/default/example.com.zone</b>
-<b>example.net = /var/zones/default/example.net.zone</b>
-<b>sub.example.net = /var/zones/default/sub.example.net.zone</b>
+example.com = /var/zones/default/example.com.zone
+example.net = /var/zones/default/example.net.zone
+sub.example.net = /var/zones/default/sub.example.net.zone
 
 ;;
 ;; Zone definitions for virtual hosts.
@@ -54,10 +54,14 @@ port = 53
 ; eqt-server uses zones in "virtual host" maching the QTH for response.
 ; If no virtual hostname matches or no QTH, zones in [default] are used.
 
-<b>[virtualhost1.dnsprovider.com]</b>
-;mydomain.com = /var/zones/virtualhost1/mydomain.com.zone
+[virtualhost1.dnsprovider.com]
+mydomain.com = /var/zones/virtualhost1/mydomain.com.zone
 
-<b>[virtualhost2.dnsprovider.com]</b>
-;mydomain2.com = /var/zones/virtualhost2/mydomain2.com.zone
+[virtualhost2.dnsprovider.com]
+mydomain2.com = /var/zones/virtualhost2/mydomain2.com.zone
+
+; multiple hostnames
+[a.user1.dnsprovider.com,b.user1.dnsprovider.com]
+mydomain3.com = /var/zones/user1/mydomain2.com.zone
 <PRE>
 

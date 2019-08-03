@@ -1,7 +1,7 @@
 $ORIGIN		eqt.name.
 $TTL	10
 @	SOA	test test 1 1 1 1 1
-	NS	ns1.eqt.name.
-ns1	A	133.242.130.108
-
-_esni	NS	ns1.eqt.name.
+	NS	dns1.dnsvhost.name.
+	NS	dns2.dnsvhost.name.
+_esni	NS	dns1.dnsvhost.name.
+	NS	dns2.dnsvhost.name.

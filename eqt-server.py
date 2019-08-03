@@ -289,17 +289,20 @@ def run():
 	for section in config.sections():
 		if section != 'global':
 			if section == 'default':
-				viewname = dns.name.from_text('.')
+				hostnames = [dns.name.from_text('.')]
 			else:
-				viewname = dns.name.from_text(section)
-			view[viewname] = dns.namedict.NameDict()
+				hostnames = map(dns.name.from_text, section.split(','))
+			v = dns.namedict.NameDict()
 			for z in config[section]:
-				view[viewname][dns.name.from_text(z)] = zone(z, config[section][z])
-				if viewname.to_text() == '.':
+				v[dns.name.from_text(z)] = zone(z, config[section][z])
+			for h in hostnames:
+				view[h] = v
+				if h.to_text() == '.':
 					hostname = '(default)'
 				else:
-					hostname = viewname
-				logging.info("loaded: hostname %s, zone %s", hostname, z)
+					hostname = h
+				for z in v.keys():
+					logging.info("loaded: hostname %s, zone %s", hostname, z)
 
 	s = server(view, port)
 	s.run()
